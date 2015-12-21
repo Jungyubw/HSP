@@ -16,9 +16,9 @@ public class Main {
 		
 		SurfaceBeads sb = hm.populateBeadSurface(-100, 100, -100, 100, Parameters.theta, Parameters.r2);
 		
-		String result = hm.experience(-1000, 1000, -1000, 1000, sb);
+		String result = hm.experience(-300, 300, -300, 300, sb);
 		
-		FileUtils.writeStringToFile(new File("result.txt"), result);
+		FileUtils.writeStringToFile(new File("result_10nm.txt"), result);
 	}
 
 }

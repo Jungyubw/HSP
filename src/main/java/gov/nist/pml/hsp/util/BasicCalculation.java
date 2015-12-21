@@ -58,7 +58,7 @@ public class BasicCalculation {
 	public Tip calculateZForTip(Tip tip, SurfaceBeads sb, double Z0){
 		double maxZ = 0;
 		for(Bead b:sb.getBeads()){
-			double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0, 2) + Math.pow(this.calculateDistance2D(b.getX(), b.getX(), tip.getX(), tip.getY()), 2)) + b.getZ();
+			double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0, 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getX(), tip.getX(), tip.getY()), 2)) + b.getZ();
 			if(currentZ > maxZ) maxZ = currentZ;
 		}
 		tip.setZ(maxZ);

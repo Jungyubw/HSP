@@ -27,7 +27,6 @@ public class HarnessManager {
 		for (int i = min_x_index; i < max_x_index + 1; i++) {
 			for (int j = min_y_index; j < max_y_index + 1; j++) {
 				
-				System.out.println("(" + i + "," + j + ")");
 				
 				Tip tip = new Tip(i*1E-9, j*1E-9, 0,Parameters.r1);
 				tip = new BasicCalculation().calculateZForTip(tip, sb, Parameters.Z0);
@@ -35,6 +34,9 @@ public class HarnessManager {
 				
 				if(j == min_y_index) result = result + totalForce;
 				else result = result + "\t" + totalForce;
+				
+				
+				System.out.println("(" + i + "," + j + ")");
 			}
 			
 			result = result + System.lineSeparator();
