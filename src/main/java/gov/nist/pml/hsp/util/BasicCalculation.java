@@ -32,20 +32,25 @@ public class BasicCalculation {
 		
 		for(Bead bead:sb.getBeads()){
 			double Zij = this.calculateSurfaceDistance(tip, bead);
+//			System.out.println("------------------------");
+//			System.out.println(tip.toString());
+//			System.out.println(bead.toString());
+//			System.out.println("Surface Distance:" + Zij);
 			double Fij = this.calculateForce(Zij);
+//			System.out.println("Force:" + Fij);
 			double normalForce = this.calculateNormalForce(Fij, tip, bead);
-			
+//			System.out.println("Normal Force:" + normalForce);
 			totalForce = totalForce + normalForce;
 		}
 		
 		return totalForce;
 	}
 	
-	public SurfaceBeads findRelevantBeads(SurfaceBeads base_bs, Tip tip){
+	public SurfaceBeads findRelevantBeads(SurfaceBeads base_sb, Tip tip){
 		SurfaceBeads sb = new SurfaceBeads();
 		
 		
-		for(Bead b:base_bs.getBeads()){
+		for(Bead b:base_sb.getBeads()){
 			if(tip.getR() + b.getR() > this.calculateDistance2D(tip.getX(), tip.getY(), b.getX(), b.getY())){
 				sb.addBead(b);
 			}
@@ -55,10 +60,11 @@ public class BasicCalculation {
 		
 	}
 	
-	public Tip calculateZForTip(Tip tip, SurfaceBeads sb, double Z0){
+	public Tip calculateZForTip(Tip tip, SurfaceBeads base_sb, double Z0){
+		SurfaceBeads relevantBeads = this.findRelevantBeads(base_sb, tip);
 		double maxZ = 0;
-		for(Bead b:sb.getBeads()){
-			double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0, 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getX(), tip.getX(), tip.getY()), 2)) + b.getZ();
+		for(Bead b:relevantBeads.getBeads()){
+			double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0, 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ();
 			if(currentZ > maxZ) maxZ = currentZ;
 		}
 		tip.setZ(maxZ);

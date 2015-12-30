@@ -14,11 +14,13 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		HarnessManager hm = new HarnessManager();
 		
-		SurfaceBeads sb = hm.populateBeadSurface(-100, 100, -100, 100, Parameters.theta, Parameters.r2);
+		SurfaceBeads base_sb = hm.populateBeadSurface(-4, 4, -4, 4, Parameters.theta, Parameters.r2);
 		
-		String result = hm.experience(-300, 300, -300, 300, sb);
+//		hm.experience2(0,289, base_sb);
 		
-		FileUtils.writeStringToFile(new File("result_10nm.txt"), result);
+		String result = hm.experience(-100, 100, -100, 100, base_sb);
+		
+		FileUtils.writeStringToFile(new File("result_10nm_2.txt"), result);
 	}
 
 }
