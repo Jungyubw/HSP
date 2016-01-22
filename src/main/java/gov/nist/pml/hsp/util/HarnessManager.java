@@ -12,7 +12,8 @@ public class HarnessManager {
 		
 		for (Integer i = start_i; i < end_i + 1; i++) {
 			for (Integer j = start_j; j < end_j + 1; j++) {
-				Bead b = new Bead(i, j, theta, 0.3*r*(1 + (Math.random() - 1.0) * 0.03));
+				Bead b = new Bead(i, j, theta, 0.3*r*(1 + (Math.random() - 0.5) * 0.03));
+//				Bead b = new Bead(i, j, theta, 0.3*r*(1 + (Math.random() - 0.5) * 0.03), (1 + (Math.random() - 0.5) * 0.03) * r);
 								sb.addBead(b);
 			}
 		}
@@ -27,7 +28,7 @@ public class HarnessManager {
 			for (int j = min_y_index; j < max_y_index + 1; j++) {
 				
 				
-				Tip tip = new Tip(i*5E-9, j*5E-9, 0,Parameters.r1);
+				Tip tip = new Tip(i*3E-9, j*3E-9, 0,Parameters.r1);
 				tip = new BasicCalculation().calculateZForTip(tip, base_sb, Parameters.Z0);
 				double totalForce = new BasicCalculation().calculateTotalForce(base_sb, tip);
 				

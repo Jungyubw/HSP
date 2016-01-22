@@ -9,6 +9,7 @@ public class Bead {
 	private double z;
 	
 	private double r;
+	
 
 	public Bead(Integer i, Integer j, double x, double y, double z, double r) {
 		super();
@@ -18,6 +19,8 @@ public class Bead {
 		this.y = y;
 		this.z = z;
 		this.r = r;
+	
+		
 	}
 	
 	public Bead(double x, double y, double z, double r) {
@@ -36,6 +39,17 @@ public class Bead {
 		
 		this.x = 2 * r * Math.cos(Math.toRadians(theta)) * i;
 		this.y = 2 * r * j - 2 * r * Math.sin(Math.toRadians(theta)) * i;
+		this.z = 0;
+	}
+	
+	public Bead(Integer i, Integer j, double theta, double r, double L) {
+		super();
+		this.i = i;
+		this.j = j;
+		this.r = r;
+				
+		this.x = 2 * L * Math.cos(Math.toRadians(theta)) * i;
+		this.y = 2 * L * j - 2 * L * Math.sin(Math.toRadians(theta)) * i;
 		this.z = 0;
 	}
 	
@@ -92,7 +106,8 @@ public class Bead {
 	public void setR(double r) {
 		this.r = r;
 	}
-
+	
+	
 	@Override
 	public String toString() {
 		return "Bead [i=" + i + ", j=" + j + ", x=" + x + ", y=" + y + ", z=" + z + ", r=" + r + "]";

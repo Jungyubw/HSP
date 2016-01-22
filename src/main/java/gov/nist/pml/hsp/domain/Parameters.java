@@ -8,5 +8,5 @@ public class Parameters {
 	public final static double r1 = 2500E-9;
 	public final static double r2 =  250E-9;
 	public final static double r12 = 1 / (1/r1 + 1/(0.3*r2));
-	public final static double theta = 30;
+	public final static double theta = 31;
 }
