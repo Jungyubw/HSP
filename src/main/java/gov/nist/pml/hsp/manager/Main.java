@@ -18,9 +18,10 @@ public class Main {
 		
 //		hm.experience2(0,289, base_sb);
 		
-		String result = hm.experience(-125*1, 125*1, -125*1, 125*1, base_sb);
+		String result[] = hm.experience(-125*1, 125*1, -125*1, 125*1, base_sb);
 		
-		FileUtils.writeStringToFile(new File("result_3nm_750nms_0.3r2_revised4.txt"), result);
+		FileUtils.writeStringToFile(new File("result_3nm_750nms_0.3r2_revised4.txt"), result[0]);
+		FileUtils.writeStringToFile(new File("result_3nm_750nms_0.3r2_revised4_Height.txt"), result[1]);
 	}
 
 }
