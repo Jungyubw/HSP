@@ -31,7 +31,7 @@ public class Bead {
 		this.r = r;
 	}
 	
-	public Bead(Integer i, Integer j, double theta, double r) {
+	public Bead(Integer i, Integer j, double theta, double r, double randNormalValue, boolean index) {
 		super();
 		this.i = i;
 		this.j = j;
@@ -39,6 +39,7 @@ public class Bead {
 		
 		this.x = 2 * r * Math.cos(Math.toRadians(theta)) * i;
 		this.y = 2 * r * j - 2 * r * Math.sin(Math.toRadians(theta)) * i;
+		//this.z = 0.03*r*randNormalValue;
 		this.z = 0;
 	}
 	
@@ -48,8 +49,8 @@ public class Bead {
 		this.j = j;
 		this.r = r;
 				
-		this.x = 2 * L * Math.cos(Math.toRadians(theta)) * i;
-		this.y = 2 * L * j - 2 * L * Math.sin(Math.toRadians(theta)) * i;
+		this.x = 1 * L * Math.cos(Math.toRadians(theta)) * i;
+		this.y = 1 * L * j - 1 * L * Math.sin(Math.toRadians(theta)) * i;
 		this.z = 0;
 	}
 	
