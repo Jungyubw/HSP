@@ -18,10 +18,10 @@ public class Main {
 		
 //		hm.experience2(0,289, base_sb);
 		
-		String result[] = hm.experience(-125*1, 125*1, -125*1, 125*1, base_sb);
+		String result[] = hm.experience(-125*2, 125*2, -125*2, 125*2, base_sb);
 		
-		FileUtils.writeStringToFile(new File("result_4nm_1000nms_r2_500nm_L500nm_STV0%_deflection0.1.txt"), result[0]);
-		FileUtils.writeStringToFile(new File("result_4nm_1000nms_r2_500nm_L500nm_STV0%__deflection0.1_TipHeight.txt"), result[1]);
+		FileUtils.writeStringToFile(new File("result_2nm_1000nms_r2_100nm_L500nm_STV3%_deflection3.txt"), result[0]);
+		FileUtils.writeStringToFile(new File("result_2nm_1000nms_r2_100nm_L500nm_STV3%_deflection3_TipHeight.txt"), result[1]);
 	}
 
 }

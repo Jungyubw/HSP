@@ -23,9 +23,9 @@ public class BasicCalculation {
 		return this.calculateR12(tip.getR(), bead.getR());
 	}
 	
-	public double calculateForce(double Zij){
-		return (Parameters.A12 * Parameters.r12) / (6 * Math.pow(Zij, 2));
-	}
+//	public double calculateForce(double Zij){
+//		return (Parameters.A12 * Parameters.r12) / (6 * Math.pow(Zij, 2));
+//	}
 	
 	public double calculateForceR12ij(double Zij, double R12ij){
 		return (Parameters.A12 * R12ij) / (6 * Math.pow(Zij, 2));
