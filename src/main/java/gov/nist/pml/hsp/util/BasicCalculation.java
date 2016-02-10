@@ -82,7 +82,8 @@ public class BasicCalculation {
 		SurfaceBeads relevantBeads = this.findRelevantBeads(base_sb, tip);
 		double maxZ = 0;
 		for(Bead b:relevantBeads.getBeads()){
-			double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0 , 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ();
+			//double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0 , 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ();
+			double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0 , 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ() - Parameters.delta;
 			//double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0 - Parameters.delta, 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ();
 			if(currentZ > maxZ) maxZ = currentZ;
 		}
