@@ -39,11 +39,6 @@ public class HarnessManager {
 				tip = new BasicCalculation().calculateZForTip(tip, base_sb, Parameters.Z0);
 				double totalForce = new BasicCalculation().calculateTotalForce(base_sb, tip);
 				
-//				if(totalForce > 1){
-//					System.out.println("Warning");
-//					System.out.println(tip.toString());
-//				}
-				
 				if(j == min_y_index) resultTotalForce = resultTotalForce + totalForce;
 				else resultTotalForce = resultTotalForce + "\t" + totalForce;
 				

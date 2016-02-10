@@ -42,8 +42,15 @@ public class BasicCalculation {
 	public double calculateTotalForce(SurfaceBeads sb, Tip tip){
 		double totalForce = 0;
 		
+		
+		
 		for(Bead bead:sb.getBeads()){
 			double Zij = this.calculateSurfaceDistance(tip, bead);
+			
+			if(Zij < Parameters.Z0){
+				Zij = Parameters.Z0;
+			}
+			
 
 //			System.out.println("------------------------");
 //			System.out.println(tip.toString());
@@ -83,7 +90,7 @@ public class BasicCalculation {
 		double maxZ = 0;
 		for(Bead b:relevantBeads.getBeads()){
 			//double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0 , 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ();
-			double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0 , 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ() - Parameters.delta;
+			double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0 - Parameters.delta, 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ();
 			//double currentZ = Math.sqrt(Math.pow(tip.getR() + b.getR() + Z0 - Parameters.delta, 2) - Math.pow(this.calculateDistance2D(b.getX(), b.getY(), tip.getX(), tip.getY()), 2)) + b.getZ();
 			if(currentZ > maxZ) maxZ = currentZ;
 		}
