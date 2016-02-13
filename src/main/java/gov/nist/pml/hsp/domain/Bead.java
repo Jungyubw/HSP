@@ -43,6 +43,17 @@ public class Bead {
 		this.z = 0;
 	}
 	
+	public Bead(Integer i, Integer j, double theta, double r, double L,double randNormalValue, boolean index) {
+		super();
+		this.i = i;
+		this.j = j;
+		this.r = r;
+		
+		this.x = 2 * L * Math.cos(Math.toRadians(theta)) * i;
+		this.y = 2 * L * j - 2 * L * Math.sin(Math.toRadians(theta)) * i;
+		//this.z = 0.03*r*randNormalValue;
+		this.z = r;// spherical mask
+	}
 	public Bead(Integer i, Integer j, double theta, double r, double L) {
 		super();
 		this.i = i;

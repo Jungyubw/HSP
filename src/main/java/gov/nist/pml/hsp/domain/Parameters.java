@@ -10,5 +10,5 @@ public class Parameters {
 	public final static double L =  500E-9;
 	public final static double r12 = 1 / (1/r1 + 1/(0.3*r2));
 	public final static double theta = 30;
-	public final static double delta = 3E-9;
+	public final static double delta = 6E-9;
 }

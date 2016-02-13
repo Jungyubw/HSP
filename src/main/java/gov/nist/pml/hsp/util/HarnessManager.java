@@ -18,7 +18,7 @@ public class HarnessManager {
 			for (Integer j = start_j; j < end_j + 1; j++) {
 				double randNormalValue = rand.nextGaussian();
 				
-				Bead b = new Bead(i, j, theta, 1.0*r*(1 + (randNormalValue) * 0.03), Parameters.L);
+				Bead b = new Bead(i, j, theta, 1.0*r*(1 + (randNormalValue) * 0.03), Parameters.L,randNormalValue, true );
 //				Bead b = new Bead(i, j, theta, 1.0*r*(1 + (randNormalValue) * 0.02), randNormalValue, true);
 //				Bead b = new Bead(i, j, theta, 0.3*r*(1 + (Math.random() - 0.5) * 0.03), (1 + (Math.random() - 0.5) * 0.03) * r);
 								sb.addBead(b);
