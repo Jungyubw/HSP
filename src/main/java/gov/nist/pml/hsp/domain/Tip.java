@@ -2,60 +2,60 @@ package gov.nist.pml.hsp.domain;
 
 public class Tip {
 
-	private double x;
-	private double y;
-	private double z;
-	
-	private double r;
+    private double x;
+    private double y;
+    private double z;
 
-	public Tip(){
-		super();
-	}
-	
-	public Tip(double x, double y, double z, double r) {
-		super();
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		this.r = r;
-	}
+    private double r;
 
-	public double getX() {
-		return x;
-	}
+    public Tip() {
+        super();
+    }
 
-	public void setX(double x) {
-		this.x = x;
-	}
+    public Tip(double x, double y, double z, double r) {
+        super();
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.r = r;
+    }
 
-	public double getY() {
-		return y;
-	}
+    public double getX() {
+        return x;
+    }
 
-	public void setY(double y) {
-		this.y = y;
-	}
+    public void setX(double x) {
+        this.x = x;
+    }
 
-	public double getZ() {
-		return z;
-	}
+    public double getY() {
+        return y;
+    }
 
-	public void setZ(double z) {
-		this.z = z;
-	}
+    public void setY(double y) {
+        this.y = y;
+    }
 
-	public double getR() {
-		return r;
-	}
+    public double getZ() {
+        return z;
+    }
 
-	public void setR(double r) {
-		this.r = r;
-	}
+    public void setZ(double z) {
+        this.z = z;
+    }
 
-	@Override
-	public String toString() {
-		return "Tip [x=" + x + ", y=" + y + ", z=" + z + ", r=" + r + "]";
-	}
-	
-	
+    public double getR() {
+        return r;
+    }
+
+    public void setR(double r) {
+        this.r = r;
+    }
+
+    @Override
+    public String toString() {
+        return "Tip [x=" + x + ", y=" + y + ", z=" + z + ", r=" + r + "]";
+    }
+
+
 }

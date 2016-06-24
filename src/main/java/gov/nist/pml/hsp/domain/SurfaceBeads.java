@@ -1,25 +1,27 @@
 package gov.nist.pml.hsp.domain;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+/**
+ * This class doesn't provide any modifiers.
+ * In other words, this is an immutable object.
+ *
+ * @ThreadSafe
+ */
 public class SurfaceBeads {
 
-	private List<Bead> beads = new ArrayList<Bead>();
+    private List<Bead> beads;
 
-	public List<Bead> getBeads() {
-		return beads;
-	}
+    public SurfaceBeads(List<Bead> beads) {
+        if (beads == null || beads.isEmpty()) {
+            this.beads = Collections.emptyList();
+        } else {
+            this.beads = Collections.unmodifiableList(beads);
+        }
+    }
 
-	public void setBeads(List<Bead> beads) {
-		this.beads = beads;
-	}
-	
-	public void addBead(Bead bead){
-		this.beads.add(bead);
-	}
-	
-	public int getSize(){
-		return this.beads.size();
-	}
+    public List<Bead> getBeads() {
+        return beads;
+    }
 }
