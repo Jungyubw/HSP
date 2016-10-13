@@ -36,12 +36,20 @@ public class HarnessManager {
 
         for (int i = start_i; i < end_i + 1; i++) {
             for (int j = start_j; j < end_j + 1; j++) {
-                double randNormalValue = rand.nextGaussian();
+            	double randNormalValue = rand.nextGaussian();
+            	
+            	if  (i == 0 & j==0) {
+            		Bead b = new Bead(i, j, theta, 0.2 * r * (1 + (randNormalValue) * 0.05), Parameters.L);
+            		beadList.add(b);
+            	}
+            	else {               
 
-                Bead b = new Bead(i, j, theta, 0.2 * r * (1 + (randNormalValue) * 0.05), Parameters.L);
+                Bead b = new Bead(i, j, theta, 0.28 * r * (1 + (randNormalValue) * 0.05), Parameters.L);
 //				Bead b = new Bead(i, j, theta, 1.0*r*(1 + (randNormalValue) * 0.02), randNormalValue, true);
 //				Bead b = new Bead(i, j, theta, 0.3*r*(1 + (Math.random() - 0.5) * 0.03), (1 + (Math.random() - 0.5) * 0.03) * r);
-                beadList.add(b);
+                beadList.add(b);        
+            	}
+            
             }
         }
         return new SurfaceBeads(beadList);

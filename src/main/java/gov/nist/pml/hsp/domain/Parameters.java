@@ -8,7 +8,7 @@ public class Parameters {
     public final static double r1 = 2500E-9;
     public final static double r2 = 250E-9;
     public final static double L = 500E-9;
-    public final static double r12 = 1 / (1 / r1 + 1 / (0.2 * r2));
+    public final static double r12 = 1 / (1 / r1 + 1 / (0.28 * r2));
     public final static double theta = 30;
     public final static double delta = 3E-9;
 }
