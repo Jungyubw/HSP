@@ -39,12 +39,12 @@ public class HarnessManager {
             	double randNormalValue = rand.nextGaussian();
             	
             	if  (i == 0 & j==0) {
-            		Bead b = new Bead(i, j, theta, 0.2 * r * (1 + (randNormalValue) * 0.05), Parameters.L);
+            		Bead b = new Bead(i, j, theta, Parameters.lamda4defect * r * (1 + (randNormalValue) * Parameters.Rstdv), Parameters.L);
             		beadList.add(b);
             	}
             	else {               
 
-                Bead b = new Bead(i, j, theta, 0.28 * r * (1 + (randNormalValue) * 0.05), Parameters.L);
+                Bead b = new Bead(i, j, theta, Parameters.lamda * r * (1 + (randNormalValue) *Parameters.Rstdv), Parameters.L);
 //				Bead b = new Bead(i, j, theta, 1.0*r*(1 + (randNormalValue) * 0.02), randNormalValue, true);
 //				Bead b = new Bead(i, j, theta, 0.3*r*(1 + (Math.random() - 0.5) * 0.03), (1 + (Math.random() - 0.5) * 0.03) * r);
                 beadList.add(b);        
@@ -127,7 +127,7 @@ public class HarnessManager {
         String resultTotalForce = "";
         String resultTipHeight = "";
 
-        Tip tip = new Tip(i * 2E-9, j * 2E-9, 0, Parameters.r1);
+        Tip tip = new Tip(i * Parameters.pixelsize, j * Parameters.pixelsize, 0, Parameters.r1);
         tip = BasicCalculation.calculateZForTip(tip, base_sb, Parameters.Z0);
         double totalForce = BasicCalculation.calculateTotalForce(base_sb, tip);
 
