@@ -19,8 +19,8 @@ public class Main {
 
         String result[] = hm.experience(-125 * 8, 125 * 8, -125 * 8, 125 * 8, base_sb);
 
-        FileUtils.writeStringToFile(new File("Defect0.1R_Dresult_2nm_4000nms_r2_1.0x250nm_L500nm_STV5%_deflection5.txt"), result[0]);
-        FileUtils.writeStringToFile(new File("Defect0.1R_Dresult_2nm_4000nms_r2_1.0x250nm_L500nm_STV5%_deflection5_TipHeight.txt"), result[1]);
+        FileUtils.writeStringToFile(new File("R_2nm_4um_r2_0.28x250nm_L500nm_STV3%_inLR_defl20.txt"), result[0]);
+        FileUtils.writeStringToFile(new File("R_2nm_4um_r2_0.28x250nm_L500nm_STV3%_inLR_defl20_H.txt"), result[1]);
     }
 
 }

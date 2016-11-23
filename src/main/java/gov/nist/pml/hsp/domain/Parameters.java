@@ -8,12 +8,12 @@ public class Parameters {
     public final static double r1 = 2500E-9;
     public final static double r2 = 250E-9;
     public final static double L = 500E-9;
-    public final static double lamda = 1.0;
-    public final static double lamda4defect = 0.1;
+    public final static double lamda = 0.28;
+    public final static double lamda4defect = 0.2;
     public final static double pixelsize = 2E-9;
-    public final static double Rstdv = 0.05;
+    public final static double Rstdv = 0.03;
     public final static double r12 = 1 / (1 / r1 + 1 / (lamda * r2));
     public final static double theta = 30;
-    public final static double delta = 5E-9;
+    public final static double delta = 20E-9;
 	
 }

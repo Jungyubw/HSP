@@ -39,12 +39,12 @@ public class HarnessManager {
             	double randNormalValue = rand.nextGaussian();
             	
             	if  (i == 0 & j==0) {
-            		Bead b = new Bead(i, j, theta, Parameters.lamda4defect * r * (1 + (randNormalValue) * Parameters.Rstdv), Parameters.L);
+            		Bead b = new Bead(i, j, theta, (Parameters.lamda * r * 1) +  (r * (randNormalValue)*Parameters.Rstdv), Parameters.L, randNormalValue, true);
             		beadList.add(b);
             	}
             	else {               
 
-                Bead b = new Bead(i, j, theta, Parameters.lamda * r * (1 + (randNormalValue) *Parameters.Rstdv), Parameters.L);
+                Bead b = new Bead(i, j, theta, (Parameters.lamda * r * 1) +  (r * (randNormalValue)*Parameters.Rstdv), Parameters.L, randNormalValue, true);
 //				Bead b = new Bead(i, j, theta, 1.0*r*(1 + (randNormalValue) * 0.02), randNormalValue, true);
 //				Bead b = new Bead(i, j, theta, 0.3*r*(1 + (Math.random() - 0.5) * 0.03), (1 + (Math.random() - 0.5) * 0.03) * r);
                 beadList.add(b);        
